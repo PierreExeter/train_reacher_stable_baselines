@@ -12,6 +12,7 @@ from collections import OrderedDict
 warnings.filterwarnings("ignore", category=FutureWarning, module='tensorflow')
 warnings.filterwarnings("ignore", category=UserWarning, module='gym')
 
+import gym_reacher
 import gym
 import numpy as np
 import yaml

@@ -172,3 +172,102 @@ BipedalWalkerHardcore-v3:
   lam: 0.95
   vf_iters: 5
   vf_stepsize: !!float 1e-3
+
+# added by Pierre
+ReacherBulletEnv-v0:
+  env_wrapper: utils.wrappers.TimeFeatureWrapper
+  n_timesteps: !!float 5e6
+  policy: 'MlpPolicy'
+  timesteps_per_batch: 2048
+  max_kl: 0.01
+  cg_iters: 15
+  cg_damping: 0.1
+  entcoeff: 0.001
+  gamma: 0.99
+  lam: 0.95
+  vf_iters: 5
+  vf_stepsize: !!float 1e-3
+
+Reacher1Dof-v0:
+  env_wrapper: utils.wrappers.TimeFeatureWrapper
+  n_timesteps: !!float 5e6
+  policy: 'MlpPolicy'
+  timesteps_per_batch: 2048
+  max_kl: 0.01
+  cg_iters: 15
+  cg_damping: 0.1
+  entcoeff: 0.001
+  gamma: 0.99
+  lam: 0.95
+  vf_iters: 5
+  vf_stepsize: !!float 1e-3
+
+Reacher2Dof-v0:
+  env_wrapper: utils.wrappers.TimeFeatureWrapper
+  n_timesteps: !!float 5e6
+  policy: 'MlpPolicy'
+  timesteps_per_batch: 2048
+  max_kl: 0.01
+  cg_iters: 15
+  cg_damping: 0.1
+  entcoeff: 0.001
+  gamma: 0.99
+  lam: 0.95
+  vf_iters: 5
+  vf_stepsize: !!float 1e-3
+
+Reacher3Dof-v0:
+  env_wrapper: utils.wrappers.TimeFeatureWrapper
+  n_timesteps: !!float 5e6
+  policy: 'MlpPolicy'
+  timesteps_per_batch: 2048
+  max_kl: 0.01
+  cg_iters: 15
+  cg_damping: 0.1
+  entcoeff: 0.001
+  gamma: 0.99
+  lam: 0.95
+  vf_iters: 5
+  vf_stepsize: !!float 1e-3
+
+Reacher4Dof-v0:
+  env_wrapper: utils.wrappers.TimeFeatureWrapper
+  n_timesteps: !!float 5e6
+  policy: 'MlpPolicy'
+  timesteps_per_batch: 2048
+  max_kl: 0.01
+  cg_iters: 15
+  cg_damping: 0.1
+  entcoeff: 0.001
+  gamma: 0.99
+  lam: 0.95
+  vf_iters: 5
+  vf_stepsize: !!float 1e-3
+
+Reacher5Dof-v0:
+  env_wrapper: utils.wrappers.TimeFeatureWrapper
+  n_timesteps: !!float 5e6
+  policy: 'MlpPolicy'
+  timesteps_per_batch: 2048
+  max_kl: 0.01
+  cg_iters: 15
+  cg_damping: 0.1
+  entcoeff: 0.001
+  gamma: 0.99
+  lam: 0.95
+  vf_iters: 5
+  vf_stepsize: !!float 1e-3
+
+Reacher6Dof-v0:
+  env_wrapper: utils.wrappers.TimeFeatureWrapper
+  n_timesteps: !!float 5e6
+  policy: 'MlpPolicy'
+  timesteps_per_batch: 2048
+  max_kl: 0.01
+  cg_iters: 15
+  cg_damping: 0.1
+  entcoeff: 0.001
+  gamma: 0.99
+  lam: 0.95
+  vf_iters: 5
+  vf_stepsize: !!float 1e-3

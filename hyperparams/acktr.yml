@@ -134,3 +134,91 @@ BipedalWalker-v3:
   n_steps: 32
   gamma: 0.98
   vf_coef: 0.38
+
+
+# added by Pierre
+ReacherBulletEnv-v0:
+  normalize: true
+  n_envs: 8
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  gamma: 0.99
+  n_steps: 16
+  ent_coef: 0.0
+  learning_rate: 0.06
+  lr_schedule: 'constant'
+  vf_coef: 0.38
+
+
+Reacher1Dof-v0:
+  normalize: true
+  n_envs: 8
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  gamma: 0.99
+  n_steps: 16
+  ent_coef: 0.0
+  learning_rate: 0.06
+  lr_schedule: 'constant'
+  vf_coef: 0.38
+
+Reacher2Dof-v0:
+  normalize: true
+  n_envs: 8
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  gamma: 0.99
+  n_steps: 16
+  ent_coef: 0.0
+  learning_rate: 0.06
+  lr_schedule: 'constant'
+  vf_coef: 0.38
+
+Reacher3Dof-v0:
+  normalize: true
+  n_envs: 8
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  gamma: 0.99
+  n_steps: 16
+  ent_coef: 0.0
+  learning_rate: 0.06
+  lr_schedule: 'constant'
+  vf_coef: 0.38
+
+Reacher4Dof-v0:
+  normalize: true
+  n_envs: 8
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  gamma: 0.99
+  n_steps: 16
+  ent_coef: 0.0
+  learning_rate: 0.06
+  lr_schedule: 'constant'
+  vf_coef: 0.38
+
+Reacher5Dof-v0:
+  normalize: true
+  n_envs: 8
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  gamma: 0.99
+  n_steps: 16
+  ent_coef: 0.0
+  learning_rate: 0.06
+  lr_schedule: 'constant'
+  vf_coef: 0.38
+
+Reacher6Dof-v0:
+  normalize: true
+  n_envs: 8
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  gamma: 0.99
+  n_steps: 16
+  ent_coef: 0.0
+  learning_rate: 0.06
+  lr_schedule: 'constant'
+  vf_coef: 0.38
+

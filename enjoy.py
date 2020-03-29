@@ -4,6 +4,7 @@ import argparse
 import pkg_resources
 import importlib
 import warnings
+import gym_reacher
 
 # numpy warnings because of tensorflow
 warnings.filterwarnings("ignore", category=FutureWarning, module='tensorflow')

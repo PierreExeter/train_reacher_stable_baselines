@@ -110,17 +110,6 @@ Walker2DBulletEnv-v0:
   gradient_steps: 1
   learning_starts: 1000
 
-ReacherBulletEnv-v0:
-  n_timesteps: !!float 1e6
-  policy: 'CustomSACPolicy'
-  learning_rate: lin_3e-4
-  buffer_size: 1000000
-  batch_size: 64
-  ent_coef: 0.01
-  train_freq: 1
-  gradient_steps: 1
-  learning_starts: 1000
-
 HumanoidBulletEnv-v0:
   normalize: "{'norm_obs': True, 'norm_reward': False}"
   n_timesteps: !!float 2e7
@@ -181,3 +170,82 @@ MinitaurBulletDuckEnv-v0:
   train_freq: 1
   gradient_steps: 1
   learning_starts: 1000
+
+# tuned by default
+ReacherBulletEnv-v0:
+  n_timesteps: !!float 1e6
+  policy: 'CustomSACPolicy'
+  learning_rate: lin_3e-4
+  buffer_size: 1000000
+  batch_size: 64
+  ent_coef: 0.01
+  train_freq: 1
+  gradient_steps: 1
+  learning_starts: 1000
+
+Reacher1Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'CustomSACPolicy'
+  learning_rate: lin_3e-4
+  buffer_size: 1000000
+  batch_size: 64
+  ent_coef: 0.01
+  train_freq: 1
+  gradient_steps: 1
+  learning_starts: 1000
+
+Reacher2Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'CustomSACPolicy'
+  learning_rate: lin_3e-4
+  buffer_size: 1000000
+  batch_size: 64
+  ent_coef: 0.01
+  train_freq: 1
+  gradient_steps: 1
+  learning_starts: 1000
+
+Reacher3Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'CustomSACPolicy'
+  learning_rate: lin_3e-4
+  buffer_size: 1000000
+  batch_size: 64
+  ent_coef: 0.01
+  train_freq: 1
+  gradient_steps: 1
+  learning_starts: 1000
+
+Reacher4Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'CustomSACPolicy'
+  learning_rate: lin_3e-4
+  buffer_size: 1000000
+  batch_size: 64
+  ent_coef: 0.01
+  train_freq: 1
+  gradient_steps: 1
+  learning_starts: 1000
+
+Reacher5Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'CustomSACPolicy'
+  learning_rate: lin_3e-4
+  buffer_size: 1000000
+  batch_size: 64
+  ent_coef: 0.01
+  train_freq: 1
+  gradient_steps: 1
+  learning_starts: 1000
+
+Reacher6Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'CustomSACPolicy'
+  learning_rate: lin_3e-4
+  buffer_size: 1000000
+  batch_size: 64
+  ent_coef: 0.01
+  train_freq: 1
+  gradient_steps: 1
+  learning_starts: 1000
+

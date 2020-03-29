@@ -84,3 +84,57 @@ HopperBulletEnv-v0:
   critic_lr: 0.00156
   normalize_observations: True
   normalize_returns: False
+
+
+# Added by Pierre
+
+ReacherBulletEnv-v0:
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.1
+  memory_limit: 50000
+
+
+Reacher1Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.1
+  memory_limit: 50000
+
+Reacher2Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.1
+  memory_limit: 50000
+
+Reacher3Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.1
+  memory_limit: 50000
+
+Reacher4Dof-v0:
+  n_timesteps: !!float 6e5
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.1
+  memory_limit: 50000
+
+Reacher5Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.1
+  memory_limit: 50000
+
+Reacher6Dof-v0:
+  n_timesteps: !!float 1e6
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.1
+  memory_limit: 50000
+
