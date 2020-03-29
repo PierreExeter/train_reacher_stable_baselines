@@ -1,8 +1,8 @@
 #!/bin/sh
 # Slurm flags                                                                                                                                                                              
-#SBATCH -p DevQ                                                                                                                                                                                
-#SBATCH -N 4                                                                                                                                                                                     
-#SBATCH -t 01:00:00                                                                                                                                                                                 
+#SBATCH -p ProdQ                                                                                                                                                                                
+#SBATCH -N 16                                                                                                                                                                                     
+#SBATCH -t 20:00:00                                                                                                                                                                                 
 #SBATCH -A ucd01                                                                                                                                                                                        
 #SBATCH -o submission_log/output.txt                                                                                                                                                                                                          
 # Mail me on job start & end                                                                                                                                                                            
