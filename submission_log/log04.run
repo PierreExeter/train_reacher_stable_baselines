@@ -1,1 +1,22 @@
-./try.sh: line 33: --seed: command not found
+Traceback (most recent call last):
+  File "train.py", line 15, in <module>
+    import gym_reacher
+  File "/home/pierre/HDD/0_Complearn/1_learning/0_Reinforcement_learning/16_stable_baselines/6_stable_baselines_zoo/rl-baselines-zoo/gym_reacher/__init__.py", line 1, in <module>
+    from gym.envs.registration import register
+  File "/home/pierre/bin/gym/gym/__init__.py", line 10, in <module>
+    from gym.spaces import Space
+  File "/home/pierre/bin/gym/gym/spaces/__init__.py", line 1, in <module>
+    from gym.spaces.space import Space
+  File "/home/pierre/bin/gym/gym/spaces/space.py", line 1, in <module>
+    from gym.utils import seeding
+  File "/home/pierre/bin/gym/gym/utils/seeding.py", line 2, in <module>
+    import numpy as np
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/numpy/__init__.py", line 161, in <module>
+    from . import lib
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/numpy/lib/__init__.py", line 19, in <module>
+    from . import scimath as emath
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/numpy/lib/scimath.py", line 509, in <module>
+    @array_function_dispatch(_unary_dispatcher)
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/numpy/core/overrides.py", line 175, in decorator
+    source, filename='<__array_function__ internals>', mode='exec')
+KeyboardInterrupt

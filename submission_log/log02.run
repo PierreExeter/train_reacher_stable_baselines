@@ -1,1 +1,25 @@
-./try.sh: line 19: --seed: command not found
+Traceback (most recent call last):
+  File "train.py", line 20, in <module>
+    import utils.import_envs  # pytype: disable=import-error
+  File "/home/pierre/HDD/0_Complearn/1_learning/0_Reinforcement_learning/16_stable_baselines/6_stable_baselines_zoo/rl-baselines-zoo/utils/__init__.py", line 1, in <module>
+    from .utils import make_env, ALGOS, linear_schedule, create_test_env,\
+  File "/home/pierre/HDD/0_Complearn/1_learning/0_Reinforcement_learning/16_stable_baselines/6_stable_baselines_zoo/rl-baselines-zoo/utils/utils.py", line 18, in <module>
+    from stable_baselines.deepq.policies import FeedForwardPolicy
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/stable_baselines/__init__.py", line 1, in <module>
+    from stable_baselines.a2c import A2C
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/stable_baselines/a2c/__init__.py", line 1, in <module>
+    from stable_baselines.a2c.a2c import A2C
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/stable_baselines/a2c/a2c.py", line 5, in <module>
+    import tensorflow as tf
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow/__init__.py", line 28, in <module>
+    from tensorflow.python import pywrap_tensorflow  # pylint: disable=unused-import
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow/python/__init__.py", line 52, in <module>
+    from tensorflow.core.framework.graph_pb2 import *
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow/core/framework/graph_pb2.py", line 7, in <module>
+    from google.protobuf import descriptor as _descriptor
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/google/protobuf/__init__.py", line 37, in <module>
+    __import__('pkg_resources').declare_namespace(__name__)
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+KeyboardInterrupt

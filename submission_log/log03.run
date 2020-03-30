@@ -1,1 +1,56 @@
-./try.sh: line 26: --seed: command not found
+Traceback (most recent call last):
+  File "train.py", line 20, in <module>
+    import utils.import_envs  # pytype: disable=import-error
+  File "/home/pierre/HDD/0_Complearn/1_learning/0_Reinforcement_learning/16_stable_baselines/6_stable_baselines_zoo/rl-baselines-zoo/utils/__init__.py", line 1, in <module>
+    from .utils import make_env, ALGOS, linear_schedule, create_test_env,\
+  File "/home/pierre/HDD/0_Complearn/1_learning/0_Reinforcement_learning/16_stable_baselines/6_stable_baselines_zoo/rl-baselines-zoo/utils/utils.py", line 18, in <module>
+    from stable_baselines.deepq.policies import FeedForwardPolicy
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/stable_baselines/__init__.py", line 1, in <module>
+    from stable_baselines.a2c import A2C
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/stable_baselines/a2c/__init__.py", line 1, in <module>
+    from stable_baselines.a2c.a2c import A2C
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/stable_baselines/a2c/a2c.py", line 5, in <module>
+    import tensorflow as tf
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow/__init__.py", line 35, in <module>
+    from tensorflow._api.v1 import compat
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow/_api/v1/compat/__init__.py", line 21, in <module>
+    from tensorflow._api.v1.compat import v1
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow/_api/v1/compat/v1/__init__.py", line 649, in <module>
+    from tensorflow_estimator.python.estimator.api._v1 import estimator
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow_estimator/__init__.py", line 8, in <module>
+    from tensorflow_estimator._api.v1 import estimator
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow_estimator/_api/v1/estimator/__init__.py", line 8, in <module>
+    from tensorflow_estimator._api.v1.estimator import experimental
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow_estimator/_api/v1/estimator/experimental/__init__.py", line 8, in <module>
+    from tensorflow_estimator.python.estimator.canned.dnn import dnn_logit_fn_builder
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow_estimator/python/estimator/__init__.py", line 25, in <module>
+    import tensorflow_estimator.python.estimator.estimator_lib
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow_estimator/python/estimator/estimator_lib.py", line 53, in <module>
+    from tensorflow_estimator.python.estimator.inputs import inputs
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow_estimator/python/estimator/inputs/inputs.py", line 22, in <module>
+    from tensorflow_estimator.python.estimator.inputs.numpy_io import numpy_input_fn
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow_estimator/python/estimator/inputs/numpy_io.py", line 26, in <module>
+    from tensorflow_estimator.python.estimator.inputs.queues import feeding_functions
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/tensorflow_estimator/python/estimator/inputs/queues/feeding_functions.py", line 40, in <module>
+    import pandas as pd
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/pandas/__init__.py", line 55, in <module>
+    from pandas.core.api import (
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/pandas/core/api.py", line 24, in <module>
+    from pandas.core.groupby import Grouper, NamedAgg
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/pandas/core/groupby/__init__.py", line 1, in <module>
+    from pandas.core.groupby.generic import (  # noqa: F401
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/pandas/core/groupby/generic.py", line 44, in <module>
+    from pandas.core.frame import DataFrame
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/pandas/core/frame.py", line 8479, in <module>
+    ops.add_special_arithmetic_methods(DataFrame)
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/pandas/core/ops/__init__.py", line 814, in add_special_arithmetic_methods
+    cls, arith_method, comp_method, bool_method, special=True
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/pandas/core/ops/__init__.py", line 744, in _create_methods
+    rsub=arith_method(cls, rsub, special),
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/pandas/core/ops/__init__.py", line 1486, in _arith_method_FRAME
+    def f(self, other, axis=default_axis, level=None, fill_value=None):
+  File "/home/pierre/bin/anaconda3/lib/python3.7/site-packages/pandas/util/_decorators.py", line 327, in __call__
+    func.__doc__ = dedent(self.join.join(docitems))
+  File "/home/pierre/bin/anaconda3/lib/python3.7/textwrap.py", line 431, in dedent
+    indents = _leading_whitespace_re.findall(text)
+KeyboardInterrupt
