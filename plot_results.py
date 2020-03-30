@@ -1,15 +1,28 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 from stable_baselines import results_plotter
 from stable_baselines.results_plotter import load_results, ts2xy
 
 
 timesteps = 1e10
-log_dir = "logs/sac/ReacherBulletEnv-v0_1/"
-log_dir = "logs/ppo2/ReacherBulletEnv-v0_5/"
+# log_dir = "logs/sac/ReacherBulletEnv-v0_1/"
+# log_dir = "logs/ppo2/ReacherBulletEnv-v0_5/"
 
-print(load_results(log_dir))
+# log_dir = "logs/a2c/ReacherBulletEnv-v0_1/"
+# log_dir = "logs/acktr/ReacherBulletEnv-v0_1/"
+log_dir = "logs/ppo2/Reacher2Dof-v0_1/"
+
+W = load_results(log_dir)
+
+print("results: ", W)
+
+# save walltime to stats.csv
+df = pd.read_csv(log_dir+'stats.csv')  
+df["Train walltime (s)"] = W["t"].max()
+df.to_csv(log_dir+"stats.csv", index=False)
+print(df)
 
 ### plot evaluations
 
@@ -31,19 +44,23 @@ for i in range(len(R)):
 plt.plot(T, av_reward)
 plt.xlabel('Number of Timesteps')
 plt.ylabel('Rewards')
-plt.show()
+plt.savefig(log_dir+"evaluations.png")
+# plt.show()
 
 
 # plot all training rewards
 
-results_plotter.plot_results([log_dir], timesteps, results_plotter.X_TIMESTEPS, "My title")
-plt.show()
+results_plotter.plot_results([log_dir], timesteps, results_plotter.X_TIMESTEPS, "")
+plt.savefig(log_dir+"reward_vs_timesteps.png")
+# plt.show()
 
-results_plotter.plot_results([log_dir], timesteps, results_plotter.X_EPISODES, "My title")
-plt.show()
+results_plotter.plot_results([log_dir], timesteps, results_plotter.X_EPISODES, "")
+plt.savefig(log_dir+"reward_vs_episodes.png")
+# plt.show()
 
-results_plotter.plot_results([log_dir], timesteps, results_plotter.X_WALLTIME, "My title")
-plt.show()
+results_plotter.plot_results([log_dir], timesteps, results_plotter.X_WALLTIME, "")
+plt.savefig(log_dir+"reward_vs_walltime.png")
+# plt.show()
 
 
 
@@ -62,30 +79,37 @@ def moving_average(values, window):
     return np.convolve(values, weights, 'valid')
 
 
-def plot_results(log_folder, title='Learning Curve'):
+def plot_results(log_folder, type_str):
     """
     plot the results
 
     :param log_folder: (str) the save location of the results to plot
-    :param title: (str) the title of the task to plot
+    :param type: (str) either 'timesteps', 'episodes' or 'walltime_hrs'
     """
 
-    x, y = ts2xy(load_results(log_folder), 'timesteps')
+    x, y = ts2xy(load_results(log_folder), type_str)
     # x, y = ts2xy(load_results(log_folder), 'episodes')
     # x, y = ts2xy(load_results(log_folder), 'walltime_hrs')
 
-    print(x)
-    print(y)
-
-    y = moving_average(y, window=10)
+    y = moving_average(y, window=50)
     # Truncate x
     x = x[len(x) - len(y):]
 
-    fig = plt.figure(title)
+    plt.figure()
     plt.plot(x, y)
-    plt.xlabel('Number of Timesteps')
+    plt.xlabel(type_str)
     plt.ylabel('Rewards')
-    plt.title(title + " Smoothed")
-    plt.show()
 
-plot_results(log_dir)
+
+    
+plot_results(log_dir, 'timesteps')
+plt.savefig(log_dir+"reward_vs_timesteps_smoothed.png")
+# plt.show()
+
+plot_results(log_dir, 'episodes')
+plt.savefig(log_dir+"reward_vs_episodes_smoothed.png")
+# plt.show()
+
+plot_results(log_dir, 'walltime_hrs')
+plt.savefig(log_dir+"reward_vs_walltime_smoothed.png")
+# plt.show()

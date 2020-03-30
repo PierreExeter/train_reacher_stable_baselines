@@ -12,6 +12,13 @@ python train.py --algo sac --env ReacherBulletEnv-v0 --eval-freq 10000 --eval-ep
 
 
 # enjoy agent trained by myself
-python enjoy.py --algo sac --env ReacherBulletEnv-v0 -f logs/ --exp-id 0
-python enjoy.py --algo ppo2 --env ReacherBulletEnv-v0 -f logs/ --exp-id 0
+
+
+1500 time steps because one episode last for 150 time steps and I want to evaluate for 10 episodes
+
+python enjoy.py --algo ppo2 --env ReacherBulletEnv-v0 -f logs/ --exp-id 0 -n 1500
+python enjoy.py --algo ppo2 --env ReacherBulletEnv-v0 -f logs/ --exp-id 0 -n 1500
+
+python enjoy.py --algo ppo2 --env Reacher2Dof-v0 -f logs/ --exp-id 0 -n 1500
+
 

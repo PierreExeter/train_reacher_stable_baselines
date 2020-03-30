@@ -5,6 +5,8 @@ import pkg_resources
 import importlib
 import warnings
 import gym_reacher
+import pandas as pd
+import time
 
 # numpy warnings because of tensorflow
 warnings.filterwarnings("ignore", category=FutureWarning, module='tensorflow')
@@ -109,6 +111,7 @@ def main():
     # For HER, monitor success rate
     successes = []
     state = None
+    
     for _ in range(args.n_timesteps):
         action, state = model.predict(obs, state=state, deterministic=deterministic)
         # Random Agent
@@ -117,6 +120,8 @@ def main():
         if isinstance(env.action_space, gym.spaces.Box):
             action = np.clip(action, env.action_space.low, env.action_space.high)
         obs, reward, done, infos = env.step(action)
+        # print(infos)
+
         if not args.no_render:
             env.render('human')
 
@@ -159,6 +164,12 @@ def main():
 
     if args.verbose > 0 and len(episode_rewards) > 0:
         print("Mean reward: {:.2f} +/- {:.2f}".format(np.mean(episode_rewards), np.std(episode_rewards)))
+
+        # added by Pierre
+        print("path:", log_path)
+        d = {"Eval mean reward": np.mean(episode_rewards)}
+        df = pd.DataFrame(d, index=[0])
+        df.to_csv(log_path+"/stats.csv", index=False)
 
     if args.verbose > 0 and len(episode_lengths) > 0:
         print("Mean episode length: {:.2f} +/- {:.2f}".format(np.mean(episode_lengths), np.std(episode_lengths)))
