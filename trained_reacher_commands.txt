@@ -5,9 +5,9 @@ python enjoy.py --algo ppo2 --env ReacherBulletEnv-v0 --folder trained_agents/ -
 
 
 
-
 # train agent myself
 python train.py --algo ppo2 --env ReacherBulletEnv-v0 --eval-freq 10000 --eval-episodes 10 --save-freq 100000
+python train.py --algo ppo2 --env Reacher2Dof-v0 --eval-freq 10000 --eval-episodes 10 --save-freq 100000
 python train.py --algo sac --env ReacherBulletEnv-v0 --eval-freq 10000 --eval-episodes 10 --save-freq 100000
 
 
@@ -20,5 +20,65 @@ python enjoy.py --algo ppo2 --env ReacherBulletEnv-v0 -f logs/ --exp-id 0 -n 150
 python enjoy.py --algo ppo2 --env ReacherBulletEnv-v0 -f logs/ --exp-id 0 -n 1500
 
 python enjoy.py --algo ppo2 --env Reacher2Dof-v0 -f logs/ --exp-id 0 -n 1500
+
+
+
+
+------------ PENDULUM-V0------------
+
+# enjoy pre trained agents
+python enjoy.py --algo a2c --env Pendulum-v0 --folder trained_agents/ -n 5000
+python enjoy.py --algo acktr --env Pendulum-v0 --folder trained_agents/ -n 5000
+python enjoy.py --algo ppo2 --env Pendulum-v0 --folder trained_agents/ -n 5000
+python enjoy.py --algo ddpg --env Pendulum-v0 --folder trained_agents/ -n 5000
+python enjoy.py --algo sac --env Pendulum-v0 --folder trained_agents/ -n 5000
+python enjoy.py --algo td3 --env Pendulum-v0 --folder trained_agents/ -n 5000
+python enjoy.py --algo trpo --env Pendulum-v0 --folder trained_agents/ -n 5000
+
+
+# optimise hyperparameters
+python train.py --algo a2c --env Pendulum-v0 -n 10000 -optimize --n-trials 100 --n-jobs -1 --sampler tpe --pruner median
+python train.py --algo acktr --env Pendulum-v0 -n 10000 -optimize --n-trials 100 --n-jobs -1 --sampler tpe --pruner median
+python train.py --algo ppo2 --env Pendulum-v0 -n 10000 -optimize --n-trials 100 --n-jobs -1 --sampler tpe --pruner median
+python train.py --algo ddpg --env Pendulum-v0 -n 10000 -optimize --n-trials 100 --n-jobs -1 --sampler tpe --pruner median
+python train.py --algo sac --env Pendulum-v0 -n 10000 -optimize --n-trials 100 --n-jobs -1 --sampler tpe --pruner median
+python train.py --algo td3 --env Pendulum-v0 -n 10000 -optimize --n-trials 100 --n-jobs -1 --sampler tpe --pruner median
+python train.py --algo ppo2 --env Pendulum-v0 -n 10000 -optimize --n-trials 100 --n-jobs -1 --sampler tpe --pruner median
+python train.py --algo trpo --env Pendulum-v0 -n 10000 -optimize --n-trials 100 --n-jobs -1 --sampler tpe --pruner median
+
+
+# train agent myself
+python train.py --algo a2c --env Pendulum-v0 -n 10000 --eval-freq 10000 --eval-episodes 10 --save-freq 100000 --seed 0
+python train.py --algo acktr --env Pendulum-v0 -n 10000 --eval-freq 10000 --eval-episodes 10 --save-freq 100000 --seed 0
+python train.py --algo ppo2 --env Pendulum-v0 -n 10000 --eval-freq 10000 --eval-episodes 10 --save-freq 100000 --seed 0
+python train.py --algo ddpg --env Pendulum-v0 -n 10000 --eval-freq 10000 --eval-episodes 10 --save-freq 100000 --seed 0
+python train.py --algo sac --env Pendulum-v0 -n 10000 --eval-freq 10000 --eval-episodes 10 --save-freq 100000 --seed 0
+python train.py --algo td3 --env Pendulum-v0 -n 10000 --eval-freq 10000 --eval-episodes 10 --save-freq 100000 --seed 0
+python train.py --algo trpo --env Pendulum-v0 -n 10000 --eval-freq 10000 --eval-episodes 10 --save-freq 100000 --seed 0
+
+
+
+# train with seeds
+# see run_experiments_pendulum.sh
+
+
+
+
+
+
+# enjoy agent trained by myself
+python enjoy.py --algo a2c --env Pendulum-v0 -f logs/ --exp-id 0 --no-render -n 2000
+python enjoy.py --algo acktr --env Pendulum-v0 -f logs/ --exp-id 0 --no-render -n 2000
+python enjoy.py --algo ppo2 --env Pendulum-v0 -f logs/ --exp-id 0 --no-render -n 2000
+python enjoy.py --algo ddpg --env Pendulum-v0 -f logs/ --exp-id 0 --no-render -n 2000
+python enjoy.py --algo sac --env Pendulum-v0 -f logs/ --exp-id 0 --no-render -n 2000
+python enjoy.py --algo td3 --env Pendulum-v0 -f logs/ --exp-id 0 --no-render -n 2000
+python enjoy.py --algo trpo --env Pendulum-v0 -f logs/ --exp-id 0 --no-render -n 2000
+
+
+
+# plot learning curve and compute training stats
+
+
 
 

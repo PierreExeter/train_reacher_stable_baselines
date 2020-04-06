@@ -12,7 +12,7 @@ timesteps = 1e10
 
 # log_dir = "logs/a2c/ReacherBulletEnv-v0_1/"
 # log_dir = "logs/acktr/ReacherBulletEnv-v0_1/"
-log_dir = "logs/ppo2/Reacher2Dof-v0_1/"
+log_dir = "logs/a2c/Pendulum-v0_18/"
 
 W = load_results(log_dir)
 

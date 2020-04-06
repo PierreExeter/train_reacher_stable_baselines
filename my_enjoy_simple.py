@@ -24,33 +24,17 @@ env_name = 'Reacher2Dof-v0'
 # env_name = 'Reacher5Dof-v0'
 # env_name = 'Reacher6Dof-v0'
 
+model_path = "logs/ppo2/Reacher2Dof-v0_1/Reacher2Dof-v0.zip"
+
 env = gym.make(env_name)
 # The algorithms require a vectorized environment to run
-# env = DummyVecEnv([lambda: env])
+env = DummyVecEnv([lambda: env])
 
 
-
-
-
-model_list = [
-    A2C(MlpPolicy, env, verbose=1, tensorboard_log=tensorboard_dir+"A2C/"),
-    ACKTR(MlpPolicy, env, verbose=1, tensorboard_log=tensorboard_dir+"ACKTR/"),
-    DDPG(mlp_ddpg, env, verbose=1, tensorboard_log=tensorboard_dir+"DDPG/"),
-    PPO1(MlpPolicy, env, verbose=1, tensorboard_log=tensorboard_dir+"PPO1/"),
-    PPO2(MlpPolicy, env, verbose=1, tensorboard_log=tensorboard_dir+"PPO2/"),
-    SAC(mlp_sac, env, verbose=1, tensorboard_log=tensorboard_dir+"SAC/"),
-    TRPO(MlpPolicy, env, verbose=1, tensorboard_log=tensorboard_dir+"TRPO/"),
-    TD3(mlp_td3, env, action_noise=action_noise, verbose=1, tensorboard_log=tensorboard_dir+"TD3/"),
-]
-
-algo_list = ['A2C', 'ACKTR', 'DDPG', 'PPO1', 'PPO2', 'SAC', 'TRPO', 'TD3']
+model = PPO2.load(model_path, env=env)
 
 
 env.render(mode="human")  # this needs to be placed BEFORE env.reset()
-
-
-print(algo)
-model = model.load(trained_dir+algo)
 
 
 for episode in range(20):

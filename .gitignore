@@ -5,6 +5,5 @@ __pycache__/
 .idea/
 cluster_sbatch.sh
 cluster_sbatch_mpi.sh
-trained_agents/
 .git/
 .pytype/

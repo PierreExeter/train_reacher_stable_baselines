@@ -2,6 +2,7 @@ from copy import deepcopy
 
 import numpy as np
 import optuna
+import yaml
 from optuna.pruners import SuccessiveHalvingPruner, MedianPruner
 from optuna.samplers import RandomSampler, TPESampler
 from optuna.integration.skopt import SkoptSampler
@@ -140,7 +141,20 @@ def hyperparam_optimization(algo, model_fn, env_fn, n_trials=10, n_timesteps=500
     for key, value in trial.params.items():
         print('    {}: {}'.format(key, value))
 
-    return study.trials_dataframe()
+    
+
+    ######## added by pierre
+    best_params = trial.params
+    print("best params: ", best_params)
+    # print("best value: ", study.best_value)
+    # print("best best trial: ", study.best_trial)
+
+    # with open('hyperparameter.yml', 'w') as outfile:
+        # yaml.dump(best_params, outfile)
+    ########
+
+    return study.trials_dataframe(), best_params
+    # return study.trials_dataframe()
 
 
 def sample_ppo2_params(trial):

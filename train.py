@@ -369,7 +369,14 @@ if __name__ == '__main__':
                                     verbose=0, **kwargs)
 
 
-        data_frame = hyperparam_optimization(args.algo, create_model, create_env, n_trials=args.n_trials,
+        # data_frame = hyperparam_optimization(args.algo, create_model, create_env, n_trials=args.n_trials,
+        #                                      n_timesteps=n_timesteps, hyperparams=hyperparams,
+        #                                      n_jobs=args.n_jobs, seed=args.seed,
+        #                                      sampler_method=args.sampler, pruner_method=args.pruner,
+        #                                      verbose=args.verbose)
+
+        # Added by Pierre
+        data_frame, best_params = hyperparam_optimization(args.algo, create_model, create_env, n_trials=args.n_trials,
                                              n_timesteps=n_timesteps, hyperparams=hyperparams,
                                              n_jobs=args.n_jobs, seed=args.seed,
                                              sampler_method=args.sampler, pruner_method=args.pruner,
@@ -385,6 +392,24 @@ if __name__ == '__main__':
 
         os.makedirs(os.path.dirname(log_path), exist_ok=True)
         data_frame.to_csv(log_path)
+
+        # added by Pierre
+        # Save hyperparams
+        with open(os.path.join(params_path, 'tuned_hyperparams.yml'), 'w') as f:
+            yaml.dump(best_params, f)
+
+        # save config
+        with open(os.path.join(params_path, 'config.yml'), 'w') as f:
+            yaml.dump(saved_hyperparams, f)
+
+
+        all_params = {**saved_hyperparams, **best_params}  # join config and tuned param (note: values in saved_hyperparams will be overwritten if also present in best_params)
+        final_params = {}
+        final_params[env_id] = all_params
+
+        with open(os.path.join(params_path, 'final_params.yml'), 'w') as f:
+            yaml.dump(final_params, f, default_flow_style=False)
+
         exit()
     else:
         # Train an agent from scratch
