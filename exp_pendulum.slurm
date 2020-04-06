@@ -18,5 +18,6 @@ module load cuda/10.0
 
 # Run code                                                                                                                                                                                    
 date
+# time ./optimise_hyperparameter_pendulum.sh
 time ./run_experiments_pendulum.sh
 date

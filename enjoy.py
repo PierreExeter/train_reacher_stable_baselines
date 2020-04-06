@@ -167,7 +167,7 @@ def main():
 
         # added by Pierre
         print("path:", log_path)
-        d = {"Eval mean reward": np.mean(episode_rewards)}
+        d = {"Eval mean reward": np.mean(episode_rewards), "Eval std": np.std(episode_rewards)}
         df = pd.DataFrame(d, index=[0])
         df.to_csv(log_path+"/stats.csv", index=False)
 
