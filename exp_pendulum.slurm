@@ -1,7 +1,6 @@
 #!/bin/sh
-
 # Slurm flags                                                                                                                                                                              
-#SBATCH -p devQ                                                                                                                                                                                
+#SBATCH -p DevQ                                                                                                                                                                                
 #SBATCH -N 1                                                                                                                                                                                     
 #SBATCH -t 00:10:00                                                                                                                                                                                 
 #SBATCH -A ucd01                                                                                                                                                                                        
@@ -17,7 +16,7 @@ module load conda/2
 source activate base_G5
 module load cuda/10.0
 
-# Run code                                                                                                                                                                                         
+# Run code                                                                                                                                                                                    
 date
-time run_experiments_pendulum.sh
+time ./run_experiments_pendulum.sh
 date
